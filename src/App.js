@@ -2,6 +2,8 @@
 import './App.css';
 import Itrms from './Itrms';
 import { useRef, useState } from 'react';
+import '@toast-ui/editor/dist/toastui-editor.css';
+import { Editor } from '@toast-ui/react-editor';
 
 function App() {
   const [data , setData] = useState("");
@@ -39,10 +41,9 @@ function App() {
     }, 100);
   }
 
-  // loding()
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <div style={{
           height: "20px",
           width : "500px",
@@ -65,7 +66,14 @@ function App() {
             mapData.map((e, index) => < Itrms value ={e} idx = {index} mapData = {setMapData} />)
           }
         </div>
-      </header>
+      </header> */}
+            <Editor
+            initialValue="hello react editor world!"
+            previewStyle="vertical"
+            height="600px"
+            initialEditType="markdown"
+            useCommandShortcut={true}
+            />
     </div>
   );
 }
